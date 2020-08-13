@@ -22,8 +22,8 @@ async def on_message(message):
             escaped_message += trimmed_message[i]
         print(escaped_message)
         
-        subprocess.run(["/home/conor/DiscordBot/gpt-2/execute-gpt2.sh", escaped_message])
-        generated_text = open("gpt-2/test.txt", "r")
+        subprocess.run(["/home/conor/DiscordBot/execute-gpt2.sh", escaped_message])
+        generated_text = open("output.txt", "r")
         await message.channel.send(generated_text.read())
 
 @client.event
